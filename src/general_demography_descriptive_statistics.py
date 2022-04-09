@@ -42,7 +42,7 @@ for i in problems:
     s = pd.concat([s1, s2]).dropna()
     clear_df = clear_df.append(s, ignore_index=True)
 
-file = open(Path(results_path, 'describing.txt'), 'w')
+file = open(Path(results_path, 'describing.txt'), 'w', encoding='utf-8')
 districts = ['Российская Федерация',
              'Центральный ФО',
              'Северо-Западный ФО',

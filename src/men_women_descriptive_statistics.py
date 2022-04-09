@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 
 
 def write_to_file(df, file, distrs):
-    # TODO: change encoding
     nan_policy = 'omit'
     for ind, row in df.iterrows():
         file.write(f'{distrs[ind]} \n')
@@ -94,8 +93,8 @@ for i in range(13):
     df_women = df_women.append(sum_row_women, ignore_index=True)
 
 df_sum = df_men + df_women
-file_men = open(Path(results_path, 'describing_men.txt'), 'w')
-file_women = open(Path(results_path, 'describing_women.txt'), 'w')
+file_men = open(Path(results_path, 'describing_men.txt'), 'w', encoding='utf-8')
+file_women = open(Path(results_path, 'describing_women.txt'), 'w', encoding='utf-8')
 districts = np.array(['Российская Федерация',
                       'Центральный ФО',
                       'Северо-Западный ФО',

@@ -1,108 +1,143 @@
-Российская Федерация
-min: 143666931.0 
-max: 146880432.0 
-mean: 146233007.25 
-median: 146646650.0 
-sd: 1068935.0806906244 
-interquartile range: 543413.25 
-range: 3213501.0 
-confidence interval with equal areas around the mean: (145339355.15889883, 147126659.34110117) 
-skewness: -2.0140727455124185 
-kurtosis: 2.478662097463345 
+Российская Федерация 
+min: 146171015, (2021) 
+max: 146880432, (2018) 
+mean: 146599589.57142857 
+median: 146748590.0 
+sd: 280751.94793498 
+interquartile range: 386547.0 
+range: 709417 
+skewness: -0.614914388831523 
+kurtosis: -1.26337615836964 
 
-Центральный ФО
-min: 38819874.0 
-max: 39433556.0 
-mean: 39182405.25 
-median: 39230271.0 
-sd: 211893.41012051317 
-interquartile range: 261965.5 
-range: 613682.0 
-confidence interval with equal areas around the mean: (39005257.926027425, 39359552.573972575) 
-skewness: -0.5556931406540919 
-kurtosis: -0.9025416809712516 
+Центральный ФО 
+min: 38951479, (2015) 
+max: 39433556, (2020) 
+mean: 39234195.428571425 
+median: 39250960.0 
+sd: 165371.93200263978 
+interquartile range: 187785.5 
+range: 482077 
+skewness: -0.5348439797448947 
+kurtosis: -0.7336865636135106 
 
-Северо-Западный ФО
-min: 13800658.0 
-max: 13981992.0 
-mean: 13905655.25 
-median: 13920634.5 
-sd: 66895.72660865565 
-interquartile range: 105860.25 
-range: 181334.0 
-confidence interval with equal areas around the mean: (13849729.023001319, 13961581.476998681) 
-skewness: -0.3328069545276225 
-kurtosis: -1.3412101885098007 
+Северо-Западный ФО 
+min: 13843556, (2015) 
+max: 13981992, (2020) 
+mean: 13920654.857142856 
+median: 13941959.0 
+sd: 55865.80298784034 
+interquartile range: 85534.5 
+range: 138436 
+skewness: -0.37282763171492145 
+kurtosis: -1.4437375698701715 
 
-Северо-Кавказский ФО
-min: 9590085.0 
-max: 9967301.0 
-mean: 9791420.375 
-median: 9799625.5 
-sd: 131363.55131350717 
-interquartile range: 179532.5 
-range: 377216.0 
-confidence interval with equal areas around the mean: (9681597.697789382, 9901243.052210618) 
-skewness: -0.15253438809615505 
-kurtosis: -1.1641974584343626 
+Южный ФО (до 2016) 
+min: 14003828, (2015) 
+max: 14044580, (2016) 
+mean: 14024204.0 
+median: 14024204.0 
+sd: 28816.015546914186 
+interquartile range: 20376.0 
+range: 40752 
+skewness: 0.0 
+kurtosis: -2.0 
 
-Приволжский ФО
-min: 29070827.0 
-max: 29738836.0 
-mean: 29507865.375 
-median: 29589635.0 
-sd: 237073.58978652148 
-interquartile range: 314265.0 
-range: 668009.0 
-confidence interval with equal areas around the mean: (29309666.894021433, 29706063.855978567) 
-skewness: -0.7737497916850928 
-kurtosis: -0.6888593444991642 
+Южный ФО (с 2017) 
+min: 16428458, (2017) 
+max: 16482488, (2021) 
+mean: 16454686.4 
+median: 16454550.0 
+sd: 20949.36540327654 
+interquartile range: 24232.0 
+range: 54030 
+skewness: 0.08548306709941438 
+kurtosis: -1.1915169319158405 
 
-Уральский ФО
-min: 12234224.0 
-max: 12360752.0 
-mean: 12320073.25 
-median: 12337651.5 
-sd: 44856.31203791565 
-interquartile range: 51608.25 
-range: 126528.0 
-confidence interval with equal areas around the mean: (12282572.434678389, 12357574.065321611) 
-skewness: -0.9498137596203924 
-kurtosis: -0.4242491652166591 
+Северо-Кавказский ФО 
+min: 9659044, (2015) 
+max: 9967301, (2021) 
+mean: 9820182.57142857 
+median: 9823481.0 
+sd: 111406.08710607205 
+interquartile range: 151955.0 
+range: 308257 
+skewness: -0.09047470374905925 
+kurtosis: -1.219253353416901 
 
-Южный ФО
-min: 13963874.0 
-max: 16482488.0 
-mean: 15535714.25 
-median: 16435155.0 
-sd: 1268584.3162474742 
-interquartile range: 2423041.5 
-range: 2518614.0 
-confidence interval with equal areas around the mean: (14475151.22102704, 16596277.27897296) 
-skewness: -0.516810270888319 
-kurtosis: -1.7310091722075625 
+Приволжский ФО 
+min: 29070827, (2021) 
+max: 29715450, (2015) 
+mean: 29474869.57142857 
+median: 29542696.0 
+sd: 235392.83401501214 
+interquartile range: 312661.0 
+range: 644623 
+skewness: -0.6441194665943828 
+kurtosis: -0.8764310012367122 
 
-Сибирский ФО
-min: 17003927.0 
-max: 19326196.0 
-mean: 18479782.375 
-median: 19290107.0 
-sd: 1144780.4729449146 
-interquartile range: 2155536.5 
-range: 2322269.0 
-confidence interval with equal areas around the mean: (17522721.94918065, 19436842.80081935) 
-skewness: -0.52105727768647 
-kurtosis: -1.720822235158954 
+Уральский ФО 
+min: 12275853, (2015) 
+max: 12360752, (2020) 
+mean: 12332337.42857143 
+median: 12345803.0 
+sd: 30718.227080226832 
+interquartile range: 34374.0 
+range: 84899 
+skewness: -0.9304922118914372 
+kurtosis: -0.45919498124074165 
 
-Дальневосточный ФО
-min: 6165284.0 
-max: 8188623.0 
-mean: 6932809.0 
-median: 6218830.5 
-sd: 1017044.1256755495 
-interquartile range: 1943444.0 
-range: 2023339.0 
-confidence interval with equal areas around the mean: (6082538.832924093, 7783079.167075907) 
-skewness: 0.5163547922629456 
-kurtosis: -1.7307542053018408 
+Сибирский ФО (до 2018) 
+min: 19287474, (2018) 
+max: 19326196, (2017) 
+mean: 19312467.5 
+median: 19318100.0 
+sd: 17766.545237233564 
+interquartile range: 18577.0 
+range: 38722 
+skewness: -0.7878631572100241 
+kurtosis: -1.0211324249236404 
+
+Сибирский ФО (с 2019) 
+min: 17003927, (2021) 
+max: 17173335, (2019) 
+mean: 17098549.666666668 
+median: 17118387.0 
+sd: 86428.62639966767 
+interquartile range: 84704.0 
+range: 169408 
+skewness: -0.3994468161804407 
+kurtosis: -1.4999999999999714 
+
+Дальневосточный ФО (до 2018) 
+min: 6165284, (2018) 
+max: 6211021, (2015) 
+mean: 6188488.25 
+median: 6188824.0 
+sd: 19338.300052400333 
+interquartile range: 20651.75 
+range: 45737 
+skewness: -0.05202209033711946 
+kurtosis: -1.2502253841887476 
+
+Дальневосточный ФО (с 2019) 
+min: 8124053, (2021) 
+max: 8188623, (2019) 
+mean: 8160626.333333333 
+median: 8169203.0 
+sd: 33128.39617810276 
+interquartile range: 32285.0 
+range: 64570 
+skewness: -0.44373640162446815 
+kurtosis: -1.5000000000000207 
+
+Крымский ФО 
+min: 2294888, (2015) 
+max: 2323369, (2016) 
+mean: 2309128.5 
+median: 2309128.5 
+sd: 20139.10823497406 
+interquartile range: 14240.5 
+range: 28481 
+skewness: 0.0 
+kurtosis: -2.0 
 

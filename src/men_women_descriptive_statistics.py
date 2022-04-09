@@ -54,7 +54,6 @@ def plotting(df, title):
 """
 
 rep_path = pathlib.Path.cwd().resolve().parents[0]
-data_path = Path(rep_path, 'data')
 results_path = Path(rep_path, 'results')
 clear_data_path = Path(rep_path, 'clear_data')
 

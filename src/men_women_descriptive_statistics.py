@@ -7,8 +7,10 @@ import scipy.stats as stat
 import matplotlib.pyplot as plt
 
 
-def write_to_file(df, file, distrs):
+def write_to_file(df, file):
     nan_policy = 'omit'
+    distrs = df['Unnamed: 0']
+    del df['Unnamed: 0']
     for ind, row in df.iterrows():
         file.write(f'{distrs[ind]} \n')
         file.write(f'min: {int(np.nanmin(row))}, ({df.columns[np.argmin(row)]}) \n')
@@ -24,7 +26,9 @@ def write_to_file(df, file, distrs):
     file.close()
 
 
-def plotting(df, title, distrs):
+def plotting(df, title):
+    distrs = df['Unnamed: 0']
+    del df['Unnamed: 0']
     plt.figure(figsize=(40, 30))
     for ind, column in enumerate(df.columns):
         plt.subplot(3, 3, ind + 1)
@@ -54,65 +58,14 @@ data_path = Path(rep_path, 'data')
 results_path = Path(rep_path, 'results')
 clear_data_path = Path(rep_path, 'clear_data')
 
-tmp_df_men = pd.read_excel(Path(data_path, 'men_2015_2022.xlsx'))
-tmp_df_women = pd.read_excel(Path(data_path, 'women_2015_2022.xlsx'))
+df_men = pd.read_excel(Path(clear_data_path, 'men_2015_2022.xlsx'))
+df_women = pd.read_excel(Path(clear_data_path, 'women_2015_2022.xlsx'))
 
-df_men_agged = pd.DataFrame()
-df_women_agged = pd.DataFrame()
-
-columns_names = ['age', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
-for i, r in tmp_df_men.iterrows():
-    if i < 2:
-        continue
-    if (i - 2) % 20 != 0:
-        df_men_agged = df_men_agged.append(r, ignore_index=True).astype(int, errors='ignore')
-
-for i, r in tmp_df_women.iterrows():
-    if i < 2:
-        continue
-    if (i - 2) % 20 != 0:
-        df_women_agged = df_women_agged.append(r, ignore_index=True)
-
-df_men_agged.columns = columns_names
-df_women_agged.columns = columns_names
-
-# TODO: write to 'clear data' (.xls)
-
-del df_men_agged['age']
-del df_women_agged['age']
-
-df_men = pd.DataFrame()
-df_women = pd.DataFrame()
-for i in range(13):
-    sum_row_men = 0
-    sum_row_women = 0
-    for j in range(19):
-        sum_row_men += df_men_agged.loc[j + 19 * i]
-        sum_row_women += df_women_agged.loc[j + 19 * i]
-    df_men = df_men.append(sum_row_men, ignore_index=True)
-    df_women = df_women.append(sum_row_women, ignore_index=True)
-
-df_sum = df_men + df_women
 file_men = open(Path(results_path, 'describing_men.txt'), 'w', encoding='utf-8')
 file_women = open(Path(results_path, 'describing_women.txt'), 'w', encoding='utf-8')
-districts = np.array(['Российская Федерация',
-                      'Центральный ФО',
-                      'Северо-Западный ФО',
-                      'Южный ФО (до 2016)',
-                      'Южный ФО (с 2017)',
-                      'Северо-Кавказский ФО',
-                      'Приволжский ФО',
-                      'Уральский ФО',
-                      'Сибирский ФО (до 2018)',
-                      'Сибирский ФО (с 2019)',
-                      'Дальневосточный ФО (до 2018)',
-                      'Дальневосточный ФО (с 2019)',
-                      'Крымский ФО'])
 
-write_to_file(df_men, file_men, districts)
-write_to_file(df_women, file_women, districts)
+write_to_file(df_men.copy(), file_men)
+write_to_file(df_women.copy(), file_women)
 
-plotting(df_men, 'Men', districts)
-plotting(df_women, 'Women', districts)
-
-# TODO: age distr (men and women)
+plotting(df_men.copy(), 'Men')
+plotting(df_women.copy(), 'Women')

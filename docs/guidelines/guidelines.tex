@@ -1,0 +1,39 @@
+\documentclass[a4paper,article,14pt]{extarticle}
+
+\usepackage{spbudiploma}
+\usepackage{euscript}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsthm,amssymb, amsmath}
+\usepackage{textcomp}
+\usepackage{indentfirst}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{multirow}
+\usepackage[usenames]{color}
+\usepackage{colortbl}
+\setcounter{tocdepth}{2}
+%\setlength{\parindent}{1.25cm}
+\graphicspath{{pictures/}}
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0}}
+
+\begin{document}
+	% TODO: добавить версии всего
+	% TODO: delete spbutemplate and add another template
+	
+	\input{titlepage.tex}
+	
+	\tableofcontents
+	\pagebreak
+	
+	\input{include/1} % Основы работы в Python
+	\input{include/2} % Элементы анализа данных
+	\input{include/3} % Методы математической статистики
+	\input{include/4} % Обзор библиотек Python
+	\input{include/5} % Библиотеки Python для проведения анализа данных и моделирования
+	\input{include/6} % Основы R
+	\input{include/7} % Проведение анализа в R
+
+\end{document}

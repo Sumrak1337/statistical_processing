@@ -1,0 +1,239 @@
+\newpage
+\addcontentsline{toc}{section}{Основы Python}
+\section*{Основы работы в Python}
+
+\addcontentsline{toc}{subsection}{Вывод данных}
+\subsection*{Вывод данных}	
+
+Для вывода данных на экран используется команда \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print()}}. Внутри скобок пишем, что хотим вывести на экран. Если это текст, то обязательно указываем его внутри кавычек. Кавычки могут быть одинарными \textit{('\_')} или двойными \textit{("\_")}. Соответственно, следующие две строчки выведут одно и то же:
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print('Python')}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print("Python")}}
+\end{flushleft}
+
+То, что мы пишем в круглых скобках у команды \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print()}}, называется аргументами или параметрами команды.
+
+Команда \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print()}} позволяет указывать несколько аргументов через запятую или же не указывать ничего. В первом случае она просто выведет все элементы через пробел:
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print(1, 2, 3, 4)}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 1 2 3 4}
+\end{flushleft}
+
+Во втором случае просто выведет пустую строку.
+
+
+\addcontentsline{toc}{subsection}{Типы данных}
+\subsection*{Типы данных}
+
+В Python есть несколько стандартных типов данных:
+
+\begin{itemize}
+	\setlength\itemsep{0.01cm}
+	\item Числа \textit{(int, float)} -- неизменяемый;
+	\item Строки \textit{(str)} -- неизменяемый, упорядоченный;
+	\item Списки \textit{(list)} -- изменяемый, упорядоченный;
+	\item Словари \textit{(dict)} -- изменяемый, упорядоченный;
+	\item Кортежи \textit{(tuple)} -- неизменяемый, упорядоченный;
+	\item Множества \textit{set} -- изменяемый, неупорядоченный;
+	\item Логический тип данных \textit{bool}.
+\end{itemize}
+
+\addcontentsline{toc}{subsubsection}{Преобразование типов}
+\subsubsection*{Преобразование типов}
+
+В Python имеется возможность преобразовывать данные из одного типа в другой. Например:
+
+\begin{flushleft}
+	Строка в число: \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{int("100")}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 100} \\
+	\vspace{1cm}
+	Число в строку: \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{str(52.7)}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: '52.7'} \\
+	\vspace{1cm}
+	Список в множество:
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{set([1, 2, 3, 3, 2, 1, 1])}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: \{1, 2, 3\}} \\
+	\vspace{1cm}
+	Строку в список: \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{list('string')}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: ['s', 't', 'r', 'i', 'n', 'g']} \\
+\end{flushleft}
+
+\addcontentsline{toc}{subsubsection}{Основные математические операции}
+\subsubsection*{Основные математические операции}
+\begin{itemize}
+	\setlength\itemsep{0.01cm}
+	\item[] + - сложение;
+	\item[] -- - вычитание;
+	\item[] * - умножение;
+	\item[] / - деление;
+	\item[] // - целочисленное деление;
+	\item[] \% - остаток от деления;
+	\item[] ** - возведение в степень.
+\end{itemize}
+
+\addcontentsline{toc}{subsubsection}{Числовые типы данных}
+\subsubsection*{Числовые типы данных}
+
+Целые числа представлены в Python типом данных \textit{int}. Для преобразования в целочисленный тип данных используется команда \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{int()}}. 
+
+Отличительной особенностью языка Python является неограниченность целочисленного типа данных. По факту, размер числа зависит только от наличия свободной памяти на компьютере. Это отличает Python от тех языков, где переменные целого типа имеют ограничение. Например, в языке C\# диапазон целых чисел находится от $-2^{63}$ до $2^{64} - 1$. То есть,
+
+\begin{flushleft}
+	Команда \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print(1024 ** 25)}} \\
+	Вполне естественно выведет:
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 180925139433306555349329664076074856020734351040063381311652475 \ldots 0123642650624}
+\end{flushleft}
+
+\addcontentsline{toc}{subsubsection}{Числа с плавающей точкой}
+\subsubsection*{Числа с плавающей точкой}
+
+Наравне с целочисленным типом данных в Python есть возможность работы с дробными (вещественными) числами. Например, числа $\pi$, $\sqrt{5}$ и $\frac{5}{4}$ не являются целыми, и типа int недостаточно для их представления. Для преобразования в вещественный тип данных используется команда \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{float()}}.
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print(float('25.1'))}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 25.1} \\
+	\vspace{1cm}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print(float(3))}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 3.0}
+\end{flushleft}
+
+\addcontentsline{toc}{subsubsection}{Строковый тип данных}
+\subsubsection*{Строковый тип данных}
+
+Строковый тип данных, как и числовой, очень часто используется в программировании. Для создания строковой переменной достаточно заключить необходимый текст в кавычки.
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s1 = 'Python'}  \# объявление строки} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s2 = ''} \hspace{1.35cm} \# пустая строка} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s3 = ' '} \hspace{0.9cm} \# строка, содержащая пробел}
+\end{flushleft}
+
+Строки можно складывать и умножать на число:
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s1 = '12'}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s2 = '23'}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s3 = '34'}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print(s1 + s2 + s3)}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print(s1 * 3)}} \\
+	\vspace{1cm}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 122334} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 121212} \\
+\end{flushleft}
+
+Очень часто бывает необходимо обратиться к конкретному символу в строке. Для этого в Python используются квадратные скобки [], в которых указывается индекс (номер) нужного символа в строке.
+
+Пусть \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s = 'Python'}}. Ниже показано, как работает индексация.
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s[0]} \hspace{1cm} \# 'P' - первый символ строки} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s[1]} \hspace{1cm} \# 'y' - второй символ строки} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s[2]} \hspace{1cm} \# 't' - третий символ строки} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s[3]} \hspace{1cm} \# 'h' - чётвертый символ строки} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s[4]} \hspace{1cm} \# 'o' - пятый символ строки} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s[5]} \hspace{1cm} \# 'n' - шестой символ строки} \\
+\end{flushleft}
+
+Также строки имеют встренную функцию \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{len()}}, которая показывает длину строки, то есть количество символов в ней.
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{s = 'Python'}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{print(len(s))}} \\
+	\vspace{1cm}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 6}
+\end{flushleft}
+
+\addcontentsline{toc}{subsection}{Условный оператор}
+\subsection*{Условный оператор}
+
+Программы должны уметь выполнять разные действия в зависимости от введенных данных. Для принятия решения программа проверяет, истинно или ложно определенное условие. В Python существует несколько способов проверки, и в каждом случае возможны два исхода: истина \textit{(True)} или ложь \textit{(False)}. 
+
+Проверка условий и принятие решений по результатам этой проверки называется ветвлением (branching). Программа таким способом выбирает, по какой из возможных ветвей ей двигаться дальше.
+
+В Python проверка условия осуществляется при помощи ключевого слова \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if}}.
+
+Общий вид использования условного оператора:
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if} *логическое условие*:} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\hspace{1cm} *блок кода, если условие истинно*} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{else}:} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\hspace{1cm} *блок кода, если условие ложно*} \\
+\end{flushleft}
+
+Двоеточие (:) в конце строки с инструкцией \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if}} сообщает интерпретатору Python, что дальше находится блок команд. В блок команд входят все строки с отступом под строкой с инструкцией \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if}}, вплоть до следующей строки без отступа. Если условие истинно, выполняется весь расположенный ниже блок. Если условие ложно, то интерпретатор игнорирует блок кода под \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if}} и сразу переходит к блоку кода под \colorbox[rgb]{0.95, 0.95, 0.95}{\textit{else}}, если он существует. Важно отметить, что отступы перед блоками обязательны.
+
+Пример:
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{x = 5}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if x <= 10:}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\hspace{1cm} \textit{print(x + 10)}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{else}:} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\hspace{1cm} \textit{print(x * 10)}} \\
+	Результатом выполнения данной программы будет: \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: 15} \\
+\end{flushleft}
+
+\addcontentsline{toc}{subsubsection}{Операторы сравнения и логические операции}
+\subsubsection*{Операторы сравнения и логические операции}
+
+В Python существуют 6 основных операторов сравнения:
+
+\begin{flushleft}
+	% TODO: выравнять под таблицу, но лучше написать таблицу
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if x > 5} \hspace{1cm} \# если x больше 5} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if x < 5} \hspace{1cm} \# если x меньше 5} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if x >= 5} \hspace{0.7cm} \# если x больше или равен 5} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if x <= 5} \hspace{0.7cm} \# если x меньше или равен 5} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if x == 5} \hspace{0.7cm} \# если x равно 5} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if x != 5} \hspace{0.9cm} \# если x не равно 5} \\
+\end{flushleft}
+
+Существуют ситуации, когда у нас есть несколько условий, и нам необходимо создать сложное условие. Для это в Python есть 3 логических оператора:
+
+\begin{itemize}
+	\setlength\itemsep{0.1em}
+	\item \textit{and}
+	\item \textit{or}
+	\item \textit{not}
+\end{itemize}
+
+Таблицы истинности совпадают с таблицами истинности логического умножения, логического сложения и отрицания соответственно.
+% TODO: написать эти таблицы
+
+Примеры использования:
+
+\begin{flushleft}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{a = 10}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{b = 5}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if a <= 5 and a + b == 15:}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\hspace{1cm} \textit{print(True)}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output:} \\
+	\vspace{1cm}
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\textit{if not(a <= 5) or a + b == 0:}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{\hspace{1cm} \textit{print(True)}} \\
+	\colorbox[rgb]{0.95, 0.95, 0.95}{Output: True} \\
+	
+\end{flushleft}
+
+
+\newpage
+\addcontentsline{toc}{subsection}{Циклы}
+\subsection*{Циклы}
+
+\addcontentsline{toc}{subsubsection}{For}
+\subsubsection*{For}
+
+\addcontentsline{toc}{subsubsection}{While}
+\subsubsection*{While}
+
+\newpage
+\addcontentsline{toc}{subsection}{Функции}
+\subsection*{Функции}

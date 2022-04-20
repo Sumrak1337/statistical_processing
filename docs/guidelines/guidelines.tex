@@ -1,39 +1,46 @@
-\documentclass[a4paper,article,14pt]{extarticle}
+\documentclass[12pt, a4paper]{article}
 
-\usepackage{spbudiploma}
-\usepackage{euscript}
-\usepackage{longtable}
-\usepackage{makecell}
-\usepackage[pdftex]{graphicx}
-\usepackage{amsthm,amssymb, amsmath}
-\usepackage{textcomp}
-\usepackage{indentfirst}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{multirow}
-\usepackage[usenames]{color}
-\usepackage{colortbl}
-\setcounter{tocdepth}{2}
-%\setlength{\parindent}{1.25cm}
-\graphicspath{{pictures/}}
+\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm, bindingoffset=0cm]{geometry}
+
+\usepackage{cmap}
+\usepackage{ifthen}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian, english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{bbm}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\usepackage{multirow}
+\usepackage{array}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+
 \hypersetup{pdfborder={0 0 0}}
 
+\usepackage{xcolor}
+% TODO: добавить версии всего
+% TODO: изменить структуру subsection
+% TODO: написать функцию для colorbox
+
 \begin{document}
-	% TODO: добавить версии всего
-	% TODO: delete spbutemplate and add another template
 	
-	\input{titlepage.tex}
-	
+	\include{include/0}
 	\tableofcontents
-	\pagebreak
-	
-	\input{include/1} % Основы работы в Python
-	\input{include/2} % Элементы анализа данных
-	\input{include/3} % Методы математической статистики
-	\input{include/4} % Обзор библиотек Python
-	\input{include/5} % Библиотеки Python для проведения анализа данных и моделирования
-	\input{include/6} % Основы R
-	\input{include/7} % Проведение анализа в R
+	\include{include/1} % Основы работы в Python
+	\include{include/2} % Элементы анализа данных
+	\include{include/3} % Методы математической статистики
+	\include{include/4} % Обзор библиотек Python
+	\include{include/5} % Библиотеки Python для проведения анализа данных и моделирования
+	\include{include/6} % Основы R
+	\include{include/7} % Проведение анализа в R
 
 \end{document}

@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import pathlib
-import seaborn as sns
 from pathlib import Path
 
 rep_path = pathlib.Path.cwd().resolve().parents[0]
@@ -35,6 +34,7 @@ for gender in ['men', 'women']:
     for ind in range(districts_number):
         df = pd.read_excel(Path(clear_data_path, f'{gender}', f'{gender}_2015_2022_{ind}.xlsx'))
         index_name = df.iloc[:, 0].to_numpy()
+        x_lbl = np.arange(len(index_name))
         del df["Unnamed: 0"]
 
         # TODO: add animation ???
@@ -42,8 +42,9 @@ for gender in ['men', 'women']:
             if np.all(np.isnan(df[column])):
                 continue
 
-            fig, ax = plt.subplots(figsize=(15, 10))
-            sns.barplot(x=index_name, y=df[column] / 1e6)
+            plt.figure(figsize=(15, 10))
+            plt.bar(x_lbl, df[column] / 1e6, 0.8)
+            plt.xticks(x_lbl, index_name, rotation=45)
             plt.xlabel("Age")
             plt.ylabel("Number of inhabitants (million people)")
             plt.title(f"{column}, {districts_names[ind]}")
@@ -52,7 +53,6 @@ for gender in ['men', 'women']:
             plt.close('all')
 
 # for general plots
-# for gender in ['men', 'women']:
 for i in range(districts_number):
     df_men = pd.read_excel(Path(men_data_path, f'men_2015_2022_{i}.xlsx'))
     df_women = pd.read_excel(Path(women_data_path, f'women_2015_2022_{i}.xlsx'))

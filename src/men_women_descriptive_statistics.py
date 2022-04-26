@@ -12,16 +12,16 @@ def write_to_file(df, file):
     distrs = df['Unnamed: 0']
     del df['Unnamed: 0']
     for ind, row in df.iterrows():
-        file.write(f'{distrs[ind]} \n')
-        file.write(f'min: {int(np.nanmin(row))}, ({df.columns[np.argmin(row)]}) \n')
-        file.write(f'max: {int(np.nanmax(row))}, ({df.columns[np.argmax(row)]}) \n')
-        file.write(f'mean: {np.nanmean(row)} \n')
-        file.write(f'median: {np.nanmedian(row)} \n')
-        file.write(f'sd: {np.nanstd(row, ddof=1)} \n')
-        file.write(f'interquartile range: {stat.iqr(row, nan_policy=nan_policy)} \n')
-        file.write(f'range: {int(np.nanmax(row) - np.nanmin(row))} \n')
-        file.write(f'skewness: {stat.skew(row, nan_policy=nan_policy)} \n')
-        file.write(f'kurtosis: {stat.kurtosis(row, nan_policy=nan_policy)} \n')
+        file.write(f'{distrs[ind]}\n')
+        file.write(f'min: {int(np.nanmin(row))}, ({df.columns[np.argmin(row)]})\n')
+        file.write(f'max: {int(np.nanmax(row))}, ({df.columns[np.argmax(row)]})\n')
+        file.write(f'mean: {np.nanmean(row)}\n')
+        file.write(f'median: {np.nanmedian(row)}\n')
+        file.write(f'sd: {np.nanstd(row, ddof=1)}\n')
+        file.write(f'interquartile range: {stat.iqr(row, nan_policy=nan_policy)}\n')
+        file.write(f'range: {int(np.nanmax(row) - np.nanmin(row))}\n')
+        file.write(f'skewness: {stat.skew(row, nan_policy=nan_policy)}\n')
+        file.write(f'kurtosis: {stat.kurtosis(row, nan_policy=nan_policy)}\n')
         file.write('\n')
     file.close()
 

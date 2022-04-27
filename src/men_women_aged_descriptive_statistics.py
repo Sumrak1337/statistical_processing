@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import pathlib
+import scipy.stats as stat
 from pathlib import Path
 
 rep_path = pathlib.Path.cwd().resolve().parents[0]
@@ -37,18 +38,29 @@ for gender in ['men', 'women']:
         x_lbl = np.arange(len(index_name))
         del df["Unnamed: 0"]
 
-        # TODO: add animation ???
         for i, column in enumerate(df.columns):
             if np.all(np.isnan(df[column])):
                 continue
 
+            data = df[column] / 1e6
+            descriptive_text = f'min: {np.min(data):.3}, ({index_name[np.argmin(data)]})\n' \
+                               f'max: {np.max(data):.3}, ({index_name[np.argmax(data)]})\n' \
+                               f'mean: {np.mean(data):.3}\n' \
+                               f'median: {np.median(data):.3}\n' \
+                               f'sd: {np.std(data, ddof=1):.3}\n' \
+                               f'interquantile range: {stat.iqr(data):.3}\n' \
+                               f'range: {np.max(data) - np.min(data):.3}\n' \
+                               f'skewness: {stat.skew(data):.3}\n' \
+                               f'kurtosis: {stat.kurtosis(data):.3}\n'
+
             plt.figure(figsize=(15, 10))
-            plt.bar(x_lbl, df[column] / 1e6, 0.8)
+            plt.bar(x_lbl, data, 0.8)
             plt.xticks(x_lbl, index_name, rotation=45)
             plt.xlabel("Age")
             plt.ylabel("Number of inhabitants (million people)")
             plt.title(f"{column}, {districts_names[ind]}")
             plt.grid()
+            plt.text(17, np.mean(data), descriptive_text, fontsize='medium', bbox=dict(facecolor='none', edgecolor='black'))
             plt.savefig(Path(str(results_path) + f'/{gender}', f'{gender}_{ind}_{column}.png'))
             plt.close('all')
 

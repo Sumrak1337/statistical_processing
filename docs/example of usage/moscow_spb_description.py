@@ -26,6 +26,7 @@ plt.xlabel("years")
 plt.ylabel("mln people")
 
 for i, row in main_df.iterrows():
+    row = row / 1e6
     print(cities[i])
     print('min: ', np.min(row), main_df.columns[np.argmin(row)])
     print('max: ', np.max(row), main_df.columns[np.argmax(row)])
@@ -39,7 +40,7 @@ for i, row in main_df.iterrows():
     print()
 
     x = main_df.columns
-    y = row / 1e6
+    y = row
 
     plt.plot(x, y, label=f'{cities[i]}', marker='o')
     plt.axhline(y=np.mean(y), linestyle='--', color='red', label=f'{cities[i]}_mean')

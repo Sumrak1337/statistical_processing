@@ -71,14 +71,43 @@ def corr_coeff():
     """
     df_men = pd.read_excel(Path(clear_data_path, 'men_rf_2015_2022.xlsx'))
     df_women = pd.read_excel(Path(clear_data_path, 'women_rf_2015_2022.xlsx'))
+    del df_men["Unnamed: 0"]
+    del df_women["Unnamed: 0"]
     men2015 = df_men[2015]
     men2022 = df_men[2022]
     women2015 = df_women[2015]
     women2022 = df_women[2022]
 
-    print(men2015.corr(women2015))
-    print(men2022.corr(women2022))
-    # TODO: ?
+    print('======relation=====')
+    df_rel = df_men / df_women
+    plt.figure()
+    plt.title(r'$Y = \frac{men}{women}$')
+    plt.xlabel('Age')
+    plt.ylabel('Y')
+    for year in df_rel.columns:
+        plt.plot(df_rel.index, df_rel[year], label=f'{year}')
+    plt.legend()
+    plt.show()
+    plt.close('all')
+    print('=====correlation======')
+    print('2015: ', men2015.corr(women2015))
+    print('2022: ', men2022.corr(women2022))
+    print('-----------')
+    previous_row = None
+    for i, row in df_men.iterrows():
+        if i == 0:
+            previous_row = row
+            continue
+        print(f'men aged {i - 1} - {i}: {row.corr(previous_row):.4}')
+        previous_row = row
+
+    for i, row in df_women.iterrows():
+        if i == 0:
+            previous_row = row
+            continue
+        print(f'women aged {i - 1} - {i}: {row.corr(previous_row):.4}')
+        previous_row = row
+    # TODO: find a way how to search in cycle for 2 frames
 
 
 def lin_reg_for_mean():
@@ -111,10 +140,12 @@ def lin_reg_for_mean():
     r2_women = reg_women.score(years, women_mean_age)
     plt.plot(years, y_pred_men, linestyle='--', label=f'men\n'
                                                       f'mce={mean_squared_error(men_mean_age, y_pred_men):.3}\n'
-                                                      f'$R^2$={r2_men}')
+                                                      f'coef={reg_men.coef_[0]:.3}\n'
+                                                      f'$R^2$={r2_men:.6}')
     plt.plot(years, y_pred_women, linestyle='--', label=f'women\n'
                                                         f'mce={mean_squared_error(women_mean_age, y_pred_women):.3}\n'
-                                                        f'$R^2$={r2_women}')
+                                                        f'coef={reg_women.coef_[0]:.3}\n'
+                                                        f'$R^2$={r2_women:.6}')
     plt.legend()
     plt.savefig(Path(str(results_path) + '/rf', 'linear_regression_for_mean_age.png'))
 
@@ -144,11 +175,13 @@ def lin_reg_75():
     plt.plot(years, y_pred_men, linestyle='--',
              label=f'men,\n'
                    f'mce={mean_squared_error(df_men, y_pred_men):.3}\n'
-                   f'$R^2=${r2_men}')
+                   f'coef={reg_men.coef_[0]:.3}\n'
+                   f'$R^2=${r2_men:.6}')
     plt.plot(years, y_pred_women, linestyle='--',
              label=f'women,\n'
                    f'mce={mean_squared_error(df_women, y_pred_women):.3}\n'
-                   f'$R^2=${r2_women}')
+                   f'coef={reg_women.coef_[0]:.3}\n'
+                   f'$R^2=${r2_women:.6}')
     plt.legend()
     plt.savefig(Path(str(results_path) + '/rf', 'linear_regression_for_75+.png'))
 
@@ -156,5 +189,5 @@ def lin_reg_75():
 # descriptive_stats()
 # general_plots()
 # corr_coeff()
-lin_reg_for_mean()
-lin_reg_75()
+# lin_reg_for_mean()
+# lin_reg_75()

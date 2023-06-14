@@ -1,2 +1,3 @@
-clear_data/
 .idea/
+results/
+__pycache__/

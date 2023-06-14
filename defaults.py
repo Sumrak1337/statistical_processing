@@ -9,3 +9,4 @@ DATA_ROOT = PROJECT_PATH / 'data'
 CLEAR_DATA_ROOT = DATA_ROOT / 'clear_data_root'
 
 os.makedirs(CLEAR_DATA_ROOT, exist_ok=True)
+os.makedirs(RESULTS_ROOT, exist_ok=True)

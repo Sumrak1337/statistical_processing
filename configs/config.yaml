@@ -3,3 +3,16 @@ defaults:
 
 full_demography:
   name: 'demography_1990_2023'
+  index_word: 'округ'
+  ufo_missed_value: 22891859
+  problem_rows:
+    ufo_indices:
+      - 2
+      - 3
+      - 4
+    sfo_indices:
+      - 8
+      - 9
+    dfo_indices:
+      - 10
+      - 11

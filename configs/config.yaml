@@ -1,0 +1,5 @@
+defaults:
+  - _self_
+
+full_demography:
+  name: 'demography_1990_2023'
